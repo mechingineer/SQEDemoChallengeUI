@@ -74,3 +74,15 @@ https://github.com/bonigarcia/webdrivermanager
 Removed chromedriver folder from src/test/resources
 
 2. Added Apache POI maven dependency to help read the test data from an excel file.
+
+#### Project Architecture:
+1. This is a Page Object Model with a pages package present in src/main/java/com/sample/test/demo/pages/. Under this package, we have page class named as PizzaOrderForm.java.
+2. Test Case file is present under src/test/java/com/sample/test/demo/tests/
+3. Test Data file is present under src/main/java/com/sample/test/demo/testdata/
+
+#### Steps to Execute the Automation Suite
+1. Navigate to src/main/java/com/sample/test/demo/testdata and update the Test Data file. As of now, there are 15 positive and 3 negative test cases in the test data file
+2. Update the file URL in the config.properties file
+3. Open Command prompt from base of the project i.e., where the pom.xml is present.
+4. Execute the command "mvn clean install test". The test will take approximately 1min to execute the number of test cases as mentioned in Step #1.
+5. Post execution, HTML report will be present under /target/surefire-reports/emailable-report.html
